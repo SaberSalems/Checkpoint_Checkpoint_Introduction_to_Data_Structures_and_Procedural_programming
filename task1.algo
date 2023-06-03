@@ -1,0 +1,36 @@
+ALGORITHM sum_distinct_elements
+VAR
+    i,j,sum: INTEGER:=0;
+    n1,n2:INTEGER;
+    T1 ,T2 : ARRAY_OF INTEGER[];
+BEGIN
+Write("Give the length of the table");
+Read (n1);
+FOR i FROM 0 TO n1-1   DO
+   read (T1[i])
+END_FOR
+Write("Give the length of the second table")
+Read (n2)
+FOR j FROM 0 TO n2-1   DO
+   read (T2[j])
+END_FOR
+WHILE (i<T1.length) DO
+WHILE (j<T2.length) DO
+    IF (T1[i]<>T2[j]) THEN
+        sum:= sum + T1[i]
+    END_IF
+    j:= j+1 
+END_WHILE
+ i:= i+1 
+END_WHILE
+WHILE (j<T2.length) DO
+WHILE (i<T1.length) DO
+    IF (T2[j]<>T1[i]) THEN
+        sum:= sum + T2[j]
+    END_IF
+  i:= i+1 
+END_WHILE
+ j:= j+1 
+END_WHILE
+ Write('The sum of distinct elements', sum);
+END

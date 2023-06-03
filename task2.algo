@@ -1,0 +1,35 @@
+
+PROCEDURE DOT PRODUCT(v1,v2: array of INTEGER[3]) 
+VAR
+     i, ps:INTEGER;
+BEGIN
+    ps=0;
+FOR i FROM 0 TO v1.length-1 STEP 1  DO
+    ps = ps+ v1[i]*v2[i]
+END_FOR
+    
+END
+
+ALGORITHM dot
+VAR
+ v : ARRAY_OF INTEGER[3];
+ n,i: INTEGER;
+BEGIN
+WRITE ("Donner le nombre de pairs");
+READ (n);
+FOR i FROM 0 TO 2n-1 STEP 1  DO
+FOR j FROM 0 TO 2 STEP 1  DO
+     READ (v[i][j])
+END_FOR
+   
+END_FOR
+j:=0
+FOR i FROM 0 TO 2n-1 STEP 1  DO
+ IF ( DOT PRODUCT (v[i],v[j+1]) = 0) THEN
+      WRITE ("Les deux vecteurs sont orthogonaux")
+      j:=j+1
+      ElSE 
+      WRITE ("Les deux vecteurs ne sont pas  orthogonaux")
+    END_IF    
+ END_FOR
+END
